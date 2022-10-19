@@ -1,39 +1,24 @@
-import logo from "./logo.svg";
-import "./App.css";
+//import logo from "./logo.svg";
+import "./index.css";
+
+import CreateCard from "./components/Card";
+import CreateHeader from "./components/Header";
+import CreateNav from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1></h1>
-      </header>
+      <CreateHeader title="Quiz - App" />
       <main>
-        <section>
-          <p></p>
-          <button> </button>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </section>
-
-        <section>
-          <p></p>
-          <button> </button>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </section>
+        <ul class="card-list">
+          <CreateCard
+            queston="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"
+            button="Show answer"
+            category="#category"
+          />
+        </ul>
       </main>
-
-      <nav>
-        <button></button>
-        <button></button>
-        <button></button>
-      </nav>
+      <CreateNav />
     </div>
   );
 }
