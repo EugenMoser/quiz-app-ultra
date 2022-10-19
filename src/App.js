@@ -10,13 +10,12 @@ function App() {
     <div className="App">
       <CreateHeader title="Quiz - App" />
       <main>
-        <ul class="card-list">
-          <CreateCard
-            queston="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"
-            button="Show answer"
-            category="#category"
-          />
-        </ul>
+        <CreateCard
+          question="In the Kingdom Heart series who provides the english voice for
+          Master Eraqus?"
+          button="Show answer"
+          category="#category"
+        />
       </main>
       <CreateNav />
     </div>
