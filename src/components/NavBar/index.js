@@ -1,12 +1,14 @@
 //Navbar JS
 
+import "./NavBar.css";
+
 function CreateNav() {
   return (
-    <nav class="navigation">
-      <ul class="navigation__list">
-        <li class="navigation__list-item navigation__list-item--active">
+    <nav className="navigation">
+      <ul className="navigation__list">
+        <li className="navigation__list-item navigation__list-item--active">
           <a
-            class="navigation__link"
+            className="navigation__link"
             href="/index.html"
             aria-label="go to home page"
           >
@@ -20,9 +22,9 @@ function CreateNav() {
             </svg>
           </a>
         </li>
-        <li class="navigation__list-item">
+        <li className="navigation__list-item">
           <a
-            class="navigation__link"
+            className="navigation__link"
             href="/bookmarks.html"
             aria-label="go to bookmarks page"
           >
@@ -36,9 +38,9 @@ function CreateNav() {
             </svg>
           </a>
         </li>
-        <li class="navigation__list-item">
+        <li className="navigation__list-item">
           <a
-            class="navigation__link"
+            className="navigation__link"
             href="/profile.html"
             aria-label="go to profile page"
           >

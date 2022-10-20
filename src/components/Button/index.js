@@ -1,9 +1,10 @@
 //Button JS
+import "./Button.css";
 
-function CreateButton({ button }) {
+function Button({ button }) {
   return (
     <button
-      class="card__button-answer"
+      className="card__button-answer"
       type="button"
     >
       {button}
@@ -11,4 +12,4 @@ function CreateButton({ button }) {
   );
 }
 
-export default CreateButton;
+export default Button;

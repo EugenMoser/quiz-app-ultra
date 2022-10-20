@@ -1,24 +1,25 @@
-//import logo from "./logo.svg";
 import "./index.css";
 
-import CreateCard from "./components/Card";
+import Card from "./components/Card";
 import CreateHeader from "./components/Header";
 import CreateNav from "./components/NavBar";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <CreateHeader title="Quiz - App" />
       <main>
-        <CreateCard
-          question="In the Kingdom Heart series who provides the english voice for
+        <ul className="card-list">
+          <Card
+            question="In the Kingdom Heart series who provides the english voice for
           Master Eraqus?"
-          button="Show answer"
-          category="#category"
-        />
+            button="Show answer"
+            category="#category"
+          />
+        </ul>
       </main>
       <CreateNav />
-    </div>
+    </>
   );
 }
 
