@@ -1,23 +1,36 @@
 //Card JS
-import CreateButton from "../Button";
+import { useState } from "react";
 
 import "./Card.css";
-import "../Bookmark/Bookmark.css";
 
-function Card({ question, button, category }) {
+function Card({ question, category, answer, buttonAnswer, buttonHide }) {
+  const [state, setState] = useState(false);
+  console.log(state);
+
   return (
     <li className="card-list__item">
       <article className="card">
         {/**question */}
         <h2 className="card__question"> {question} </h2>
-        {/**import Card Button */}
-        <CreateButton button="Show answer" />
+        {/**card button */}
+        <button
+          className="card__button-answer"
+          type="button"
+          onClick={() => {
+            setState((state) => !state);
+          }}
+        >
+          {state ? buttonHide : buttonAnswer}
+        </button>
 
+        {/**answer */}
+        <p className={state ? "card__answer card__answer--active" : "card__answer"}>
+          {answer}
+        </p>
         {/**categories */}
         <ul className="card__tag-list">
           <li className="card__tag-list-item">{category}</li>
         </ul>
-
         {/**Bookmark Button */}
         <div className="card__button-bookmark">
           <button
@@ -30,7 +43,7 @@ function Card({ question, button, category }) {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
-              <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"></path>
+              <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zM17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"></path>
             </svg>
           </button>
         </div>

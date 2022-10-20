@@ -9,6 +9,20 @@
   margin: 0 0 2rem;
 }
 
+.card__button-answer {
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  display: block;
+  margin: 0 auto 2rem auto;
+  padding: 1rem;
+}
+
+.card__button-answer:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
 .card__answer {
   margin: 0 2rem;
   font-style: italic;
@@ -49,4 +63,28 @@
 
 .card-list__item {
   margin: 0 0 4rem;
+}
+
+/* bookmark */
+
+.bookmark {
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.bookmark:hover {
+  cursor: pointer;
+}
+
+.bookmark--active {
+  color: var(--black);
+}
+
+.bookmark__icon {
+  fill: currentcolor;
+  width: 2em;
 }
