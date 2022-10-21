@@ -2,14 +2,22 @@
 
 import "./NavBar.css";
 
-function Nav() {
+function Nav({ state, setState }) {
+  console.log(state);
   return (
     <nav className="navigation">
       <ul className="navigation__list">
-        <li className="navigation__list-item navigation__list-item--active">
+        <li
+          className={
+            state === "home"
+              ? "navigation__list-item navigation__list-item--active"
+              : "navigation__list-item"
+          }
+        >
           <button
             type="button"
             className="navigation__button"
+            onClick={() => setState("home")}
           >
             <svg
               className="navigation__icon"
@@ -19,10 +27,17 @@ function Nav() {
             </svg>
           </button>
         </li>
-        <li className="navigation__list-item">
+        <li
+          className={
+            state === "bookmark"
+              ? "navigation__list-item navigation__list-item--active"
+              : "navigation__list-item "
+          }
+        >
           <button
             type="button"
             className="navigation__button"
+            onClick={() => setState("bookmark")}
           >
             <svg
               className="navigation__icon"
@@ -32,10 +47,17 @@ function Nav() {
             </svg>
           </button>
         </li>
-        <li className="navigation__list-item">
+        <li
+          className={
+            state === "create"
+              ? "navigation__list-item navigation__list-item--active"
+              : "navigation__list-item "
+          }
+        >
           <button
             type="button"
             className="navigation__button"
+            onClick={() => setState("create")}
           >
             <svg
               className="navigation__icon"
@@ -45,10 +67,17 @@ function Nav() {
             </svg>
           </button>
         </li>
-        <li className="navigation__list-item">
+        <li
+          className={
+            state === "profile"
+              ? "navigation__list-item navigation__list-item--active"
+              : "navigation__list-item "
+          }
+        >
           <button
             type="button"
             className="navigation__button"
+            onClick={() => setState("profile")}
           >
             <svg
               className="navigation__icon"
