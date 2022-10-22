@@ -1,24 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import { useState } from "react";
+
+import Header from "./components/Header";
+import Nav from "./components/NavBar";
+
+import Cards from "./Pages/Cards.js";
+import Create from "./Pages/Create.js";
+import Profile from "./Pages/Profile.js";
+
+import { cards } from "./Pages/Data.js";
 
 function App() {
+  const [state, setState] = useState("home");
+  //const [page, setPage] = useState("home"); laut Aufgabe!!
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header title="Quiz - App" />
+      <main>
+        <ul className="card-list">
+          {state === "home" && (
+            <Cards
+              key={cards.id}
+              cards={cards}
+            />
+          )}
+
+          {/* ????????????????????????? push bookmarked Cards to Bookmark page--Part 5c - Bookmarked cards*/}
+          {cards.isBookmarked
+            ? state === "bookmark" && (
+                <Cards
+                  key={cards.id}
+                  cards={cards}
+                />
+              )
+            : ""}
+
+          {/* {cards.isBookmarked && state === "bookmark" ? (
+            <Cards
+              key={cards.id}
+              cards={cards}
+            />
+          ) : (
+            ""
+          )} */}
+          {state === "create" && (
+            <Create
+              key={cards.id}
+              cards={cards}
+            />
+          )}
+          {state === "profile" && <Profile key={cards.id} />}
+        </ul>
+      </main>
+      <Nav
+        state={state}
+        setState={setState}
+      />
+    </>
   );
 }
 
