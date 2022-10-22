@@ -3,9 +3,9 @@ import { useState } from "react";
 
 import "./Card.css";
 
-//function Card({ question, category, answer, buttonAnswer, buttonHide })
 function Card({ card }) {
   const [state, setState] = useState(false);
+  const [bookmark, setBookmark] = useState(false);
   //console.log(state);
   console.log(card.isBookmarked);
 
@@ -14,6 +14,7 @@ function Card({ card }) {
       <article className="card">
         {/**question */}
         <h2 className="card__question"> {card.question} </h2>
+
         {/**card button */}
         <button
           className="card__button-answer"
@@ -22,7 +23,7 @@ function Card({ card }) {
             setState((state) => !state);
           }}
         >
-          {state ? card.buttonHide : card.buttonAnswer}
+          {state ? "Hide answer" : "Show answer"}
         </button>
 
         {/**answer */}
@@ -33,18 +34,21 @@ function Card({ card }) {
         >
           {card.answer}
         </p>
+
         {/**categories */}
         <ul className="card__tag-list">
           {card.category.map((cardCategory) => {
             return <li className="card__tag-list-item">{cardCategory}</li>;
           })}
         </ul>
+
         {/**Bookmark Button */}
         <div className="card__button-bookmark">
           <button
-            className={
-              card.isBookmarked ? "bookmark bookmark--active" : "bookmark"
-            }
+            onClick={() => {
+              setBookmark((bookmark) => !bookmark);
+            }}
+            className={bookmark ? "bookmark bookmark--active" : "bookmark"}
             aria-label="bookmark"
             type="button"
           >

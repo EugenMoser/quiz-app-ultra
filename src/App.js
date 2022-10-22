@@ -24,6 +24,8 @@ function App() {
               cards={cards}
             />
           )}
+
+          {/* ????????????????????????? push bookmarked Cards to Bookmark page--Part 5c - Bookmarked cards*/}
           {cards.isBookmarked
             ? state === "bookmark" && (
                 <Cards
@@ -41,7 +43,12 @@ function App() {
           ) : (
             ""
           )} */}
-          {state === "create" && <Create key={cards.id} />}
+          {state === "create" && (
+            <Create
+              key={cards.id}
+              cards={cards}
+            />
+          )}
           {state === "profile" && <Profile key={cards.id} />}
         </ul>
       </main>
