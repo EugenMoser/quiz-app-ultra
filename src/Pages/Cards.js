@@ -1,17 +1,20 @@
 //Cards ARRAY!!!
+import Card from "../components/Card";
 
-
-function Cards() {
-  return <h2>"Card Array"</h2>;
-
-  {
-    "id":0,
-    "queston": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"
-    Master Eraqus?",
-    "buttonAnswer": "Show answer",
-    "buttonHide":"Hide answer",
-    "category": {#category,#category, #category}
-  }
+function Cards({ cards }) {
+  return (
+    <>
+      {/*create all cards*/}
+      {cards.map((card) => {
+        return (
+          <Card
+            key={card.id}
+            card={card}
+          />
+        );
+      })}
+    </>
+  );
 }
 
 export default Cards;
